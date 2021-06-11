@@ -1,6 +1,6 @@
 var oDefaultIni = {
     //win、tab、popup
-	"openAppMode": 'win'
+	"openAppMode": 'popup'
 };
 
 
