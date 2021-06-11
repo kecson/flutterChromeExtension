@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Flutter Chrome Extension",
+  "version": "1.0.0",
+  "description": "This is a flutter chrome extension",
+  "content_security_policy": "script-src 'self'  'unsafe-eval'  https://unpkg.com https://fonts.googleapis.com https://api.flutter.dev https://fonts.gstatic.com;  object-src 'self'  ;  ",
+  "icons": {
+    "16": "/icons/Icon-192.png",
+    "24": "/icons/Icon-192.png",
+    "48": "/icons/Icon-192.png",
+    "128": "/icons/Icon-192.png",
+    "192": "/icons/Icon-192.png",
+    "512": "/icons/Icon-512.png"
+  },
+  "browser_action": {
+    "default_title": "Flutter Chrome Extension",
+    "default_icon": "/icons/Icon-192.png"
+  },
+  "permissions": [
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+
+  "offline_enabled": true,
+  "homepage_url": "https://flutter.dev",
+  "omnibox": {
+    "keyword": "Flutter Chrome Extension"
+  }
+}
