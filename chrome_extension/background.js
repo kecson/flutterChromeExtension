@@ -1,6 +1,6 @@
 var oDefaultIni = {
     //win、tab、popup
-	"openAppMode": 'popup'
+	"openAppMode": 'win'
 };
 
 
@@ -33,8 +33,22 @@ function openApp() {
         //打开新的标签
         chrome.tabs.create({"url":appUrl, "selected":true});
     }else if(config.openAppMode === 'win') {
-        //打开新的窗口
-        chrome.windows.create({url: appUrl, type: "popup", width: 375, height: 667});
+       //type: enum of "normal", "popup", "panel"
+      
+        const winWidth=375;
+        const winHeight=667;
+
+        var left=parseInt((screen.width/2-winWidth/2));
+        
+        chrome.windows.create({
+        
+        url: appUrl,
+        type: "popup",
+        width: winWidth,
+        height: winHeight,
+        left:left,
+        });
+
     }else {
         //在图标下面弹窗。  点击窗口外的地方后，窗口会关闭。
         chrome.browserAction.setPopup({
